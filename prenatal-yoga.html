@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Garbha Prana: Sacred Prenatal & Postnatal Yoga • PranaFlow</title>
+  
+  <!-- Google Fonts: Noto Serif + Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Material Symbols Outlined -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            forest: {
+              50: '#F0F7F4',
+              100: '#DFEFEA',
+              200: '#C0DFD6',
+              300: '#94C7B8',
+              400: '#5FA995',
+              500: '#3D8C78',
+              600: '#2C7060',
+              700: '#235A4D',
+              800: '#1C483F',
+              900: '#143831',
+              950: '#0B211D',
+            },
+            sandalwood: {
+              50: '#FDF8F5',
+              100: '#FBF0E9',
+              200: '#F6DFD1',
+              300: '#EEC5AE',
+              400: '#E4A283',
+              500: '#D57C54',
+              600: '#C25D34',
+              700: '#A24A28',
+              800: '#833D25',
+              900: '#6C3622',
+            },
+            parchment: {
+              50: '#FDFCF7',
+              100: '#F9F7EE',
+              200: '#F4EFE0',
+              300: '#EDE4CB',
+              400: '#E1D3AF',
+              500: '#CEBC8E',
+            },
+            zen: {
+              dark: '#0E1715',
+              card: '#FFFFFF',
+              border: '#E8E5DC',
+              muted: '#667571'
+            }
+          },
+          fontFamily: {
+            serif: ['"Noto Serif"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          boxShadow: {
+            'saas': '0 10px 30px -5px rgba(20, 56, 49, 0.07), 0 0 0 1px rgba(20, 56, 49, 0.05)',
+            'saas-hover': '0 20px 40px -10px rgba(20, 56, 49, 0.12), 0 0 0 1px rgba(44, 112, 96, 0.2)',
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #F4EFE0; }
+    ::-webkit-scrollbar-thumb { background: #EEC5AE; border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #D57C54; }
+    .modal-hidden { opacity: 0; pointer-events: none; }
+    .modal-backdrop { transition: opacity 0.25s ease-in-out; }
+  </style>
+</head>
+
+<body class="bg-parchment-50 text-zen-dark font-sans antialiased selection:bg-sandalwood-100 selection:text-sandalwood-900">
+
+  <!-- =========================================================================
+       GLOBAL SAAS TOAST NOTIFICATION CONTAINER
+       ========================================================================= -->
+  <div id="toastContainer" class="fixed bottom-5 right-5 z-[9999] flex flex-col gap-2 pointer-events-none"></div>
+
+  <!-- =========================================================================
+       TOP ANNOUNCEMENT BANNER
+       ========================================================================= -->
+  <div class="bg-forest-950 text-parchment-200 text-xs py-2 px-4 border-b border-forest-800/60">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-sandalwood-400 animate-pulse"></span>
+        <span>Garbha Sanskar Lineage: Sacred Prenatal & Doula-Guided Care for Trimesters 1, 2, 3 & Postpartum</span>
+      </div>
+      <div class="hidden sm:flex items-center gap-4 text-[11px] text-parchment-400">
+        <a href="index.html" class="hover:text-white transition-colors flex items-center gap-1">
+          <span class="material-symbols-outlined text-[14px]">arrow_back</span>
+          <span>Back to Main Studio</span>
+        </a>
+        <span class="text-forest-700">|</span>
+        <span>OB/GYN Cleared Holistic Guidance</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       STICKY HEADER NAVIGATION BAR
+       ========================================================================= -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-zen-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-3.5 group flex-shrink-0">
+        <div class="w-11 h-11 rounded-2xl bg-forest-900 flex items-center justify-center text-white shadow-sm group-hover:scale-105 transition-transform duration-300">
+          <span class="material-symbols-outlined text-2xl text-sandalwood-300">spa</span>
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <span class="font-serif text-2xl font-bold tracking-tight text-forest-950">Aaranyak</span>
+            <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-sandalwood-100 text-sandalwood-800 uppercase tracking-wider">Maternal Track</span>
+          </div>
+          <p class="text-[11px] text-zen-muted font-medium tracking-wide whitespace-nowrap -mt-0.5">Garbha Prana Prenatal & Doula Wellness</p>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-1 bg-parchment-100/90 p-1.5 rounded-full border border-zen-border/90 shadow-[inset_0_1px_2px_rgba(0,0,0,0.03)] flex-shrink-0">
+        <a href="index.html" class="px-3.5 py-1.5 text-[13px] font-semibold text-zen-muted hover:text-forest-950 hover:bg-white rounded-full transition-all whitespace-nowrap flex items-center gap-1">
+          <span class="material-symbols-outlined text-[15px]">home</span>
+          <span>Home</span>
+        </a>
+        <a href="index.html#offerings" class="px-3.5 py-1.5 text-[13px] font-semibold text-zen-muted hover:text-forest-950 hover:bg-white rounded-full transition-all whitespace-nowrap">
+          All Programs
+        </a>
+        <a href="prenatal-yoga.html" class="px-3.5 py-1.5 text-[13px] font-bold text-forest-950 bg-white rounded-full transition-all whitespace-nowrap shadow-xs flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-[15px] text-sandalwood-600">pregnant_woman</span>
+          <span>Prenatal Yoga</span>
+        </a>
+        <a href="senior-yoga.html" class="px-3.5 py-1.5 text-[13px] font-semibold text-zen-muted hover:text-forest-950 hover:bg-white rounded-full transition-all whitespace-nowrap flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-[15px] text-forest-700">elderly</span>
+          <span>Senior Yoga</span>
+        </a>
+        <a href="certifications.html" class="px-3.5 py-1.5 text-[13px] font-semibold text-zen-muted hover:text-forest-950 hover:bg-white rounded-full transition-all whitespace-nowrap flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-[15px] text-emerald-600">workspace_premium</span>
+          <span>Certifications</span>
+        </a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-2.5 flex-shrink-0">
+        <button onclick="playLaborSingingBowl()" class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-bold text-sandalwood-800 bg-sandalwood-50 hover:bg-sandalwood-100 border border-sandalwood-200 transition-all whitespace-nowrap">
+          <span class="material-symbols-outlined text-[16px] text-sandalwood-600">graphic_eq</span>
+          <span>Labor Breath Audio</span>
+        </button>
+
+        <button onclick="openPrenatalBookingModal('Garbha Prana Trimester Flow & Doula Circle', 'Master Elena Vance & Certified Doulas', 'Tue/Thu/Sat • 10:00 AM EST (50m)')" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold text-white bg-forest-900 hover:bg-forest-800 transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5 whitespace-nowrap group">
+          <span>Book Free Prenatal Pass</span>
+          <span class="material-symbols-outlined text-[16px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button onclick="toggleMobileNav()" class="lg:hidden p-2 rounded-xl text-zen-dark hover:bg-parchment-200/60 transition-colors ml-1" aria-label="Toggle Navigation">
+          <span class="material-symbols-outlined text-2xl">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileNav" class="hidden lg:hidden border-t border-zen-border bg-white px-4 py-4 space-y-2">
+      <a href="index.html" class="block px-3 py-2 text-sm font-semibold text-zen-dark hover:bg-forest-50 rounded-lg flex items-center gap-2">
+        <span class="material-symbols-outlined text-[18px]">home</span>
+        <span>Back to Main Studio</span>
+      </a>
+      <a href="index.html#offerings" class="block px-3 py-2 text-sm font-semibold text-zen-dark hover:bg-forest-50 rounded-lg">Programs & Sadhanas</a>
+      <a href="prenatal-yoga.html" class="block px-3 py-2 text-sm font-bold text-forest-900 bg-sandalwood-50 rounded-lg flex items-center gap-2">
+        <span class="material-symbols-outlined text-[18px] text-sandalwood-600">pregnant_woman</span>
+        <span>Prenatal Yoga (Pregnancy & Postnatal)</span>
+      </a>
+      <a href="senior-yoga.html" class="block px-3 py-2 text-sm font-semibold text-zen-dark hover:bg-forest-50 rounded-lg flex items-center gap-2">
+        <span class="material-symbols-outlined text-[18px] text-forest-700">elderly</span>
+        <span>Senior Yoga (Active Aging & Joints)</span>
+      </a>
+      <a href="certifications.html" class="block px-3 py-2 text-sm font-semibold text-zen-dark hover:bg-forest-50 rounded-lg flex items-center gap-2">
+        <span class="material-symbols-outlined text-[18px] text-emerald-600">workspace_premium</span>
+        <span>Teacher Certifications (200H / 500H)</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       HERO SECTION: PRENATAL & POSTNATAL YOGA
+       ========================================================================= -->
+  <section class="relative pt-12 pb-20 bg-gradient-to-b from-sandalwood-50/70 via-white to-parchment-50 overflow-hidden border-b border-zen-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Breadcrumb Navigation -->
+      <div class="flex items-center gap-2 text-xs text-zen-muted mb-8">
+        <a href="index.html" class="hover:text-forest-950 flex items-center gap-1">
+          <span class="material-symbols-outlined text-[14px]">home</span>
+          <span>Home</span>
+        </a>
+        <span>/</span>
+        <a href="index.html#offerings" class="hover:text-forest-950">Specialized Programs</a>
+        <span>/</span>
+        <span class="text-forest-900 font-bold">Sacred Prenatal Yoga</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Hero Text Matter -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sandalwood-100 border border-sandalwood-200 text-sandalwood-800 text-xs font-bold uppercase tracking-wider">
+            <span class="material-symbols-outlined text-[16px] text-sandalwood-600">pregnant_woman</span>
+            <span>Sacred Garbha Sanskar Tradition • Trimesters 1, 2, 3 & 4</span>
+          </div>
+
+          <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-extrabold text-forest-950 tracking-tight leading-[1.15]">
+            Nurturing Mother & Baby Through Every Sacred Trimester
+          </h1>
+
+          <p class="text-base sm:text-lg text-zen-muted leading-relaxed max-w-2xl">
+            Rooted in Vedic <strong class="text-forest-900 font-semibold">Garbha Sanskar</strong> and modern obstetric biomechanics. Relieve lower back compression, tone the pelvic floor safely, release sciatic strain, and master Golden Thread labor breathing with certified prenatal therapists and registered doulas.
+          </p>
+
+          <!-- Highlights Grid -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+            <div class="p-3.5 rounded-2xl bg-white border border-zen-border shadow-xs text-center">
+              <span class="block font-serif text-2xl font-bold text-sandalwood-700">100%</span>
+              <span class="text-[11px] text-zen-muted font-medium">OB/GYN Safe Protocols</span>
+            </div>
+            <div class="p-3.5 rounded-2xl bg-white border border-zen-border shadow-xs text-center">
+              <span class="block font-serif text-2xl font-bold text-sandalwood-700">T1–T4</span>
+              <span class="text-[11px] text-zen-muted font-medium">Stage-by-Stage Custom</span>
+            </div>
+            <div class="p-3.5 rounded-2xl bg-white border border-zen-border shadow-xs text-center">
+              <span class="block font-serif text-2xl font-bold text-sandalwood-700">24K+</span>
+              <span class="text-[11px] text-zen-muted font-medium">Safe Deliveries Guided</span>
+            </div>
+            <div class="p-3.5 rounded-2xl bg-white border border-zen-border shadow-xs text-center">
+              <span class="block font-serif text-2xl font-bold text-sandalwood-700">Doula</span>
+              <span class="text-[11px] text-zen-muted font-medium">Weekly Circle Included</span>
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="flex flex-wrap items-center gap-4 pt-4">
+            <button onclick="openPrenatalBookingModal('Garbha Prana Trimester Flow & Doula Circle', 'Master Elena Vance', 'Tue/Thu/Sat • 10:00 AM EST (50m)')" class="px-7 py-3.5 rounded-full bg-forest-900 hover:bg-forest-800 text-white font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center gap-2">
+              <span class="material-symbols-outlined text-[18px]">favorite</span>
+              <span>Claim Free Prenatal Trial Pass</span>
+            </button>
+            <button onclick="playLaborSingingBowl()" class="px-6 py-3.5 rounded-full bg-white hover:bg-sandalwood-50 text-sandalwood-900 font-bold text-sm border border-sandalwood-200 transition-all flex items-center gap-2 shadow-xs">
+              <span class="material-symbols-outlined text-[18px] text-sandalwood-700">graphic_eq</span>
+              <span>Play Golden Thread Labor Breath</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Hero Visual Card -->
+        <div class="lg:col-span-5">
+          <div class="relative bg-white rounded-3xl p-4 sm:p-6 shadow-saas border border-zen-border">
+            <div class="relative aspect-[4/3] rounded-2xl overflow-hidden mb-5 bg-forest-900">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUh0dZCzFpr8PVJSGOFzuaSDEhPr_X9WgPw8m8atm5rSBohK-q2TQxxduVQspcUaxtIAIjphJJy_jWV-6dPO2F0i8AjYO6LK0GuCRuB3BNoRfqYFj8wfr7uBLYzbnQcWktSn9HgS1YdzXtB5rx487hssWcZqNziFtoYHPg-iVORs6wgLD_j1BFCwn79_Ayyob_bF6zQ8AO0l3NB8fTuJs7h_omb4ZfKkKUFVzDbsUqQjzQlkEo8gn4IA" 
+                   alt="Expectant mother in peaceful meditation" 
+                   class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-forest-950/80 via-transparent to-transparent flex items-end p-5">
+                <div class="text-white">
+                  <p class="text-xs uppercase tracking-widest text-sandalwood-300 font-bold">Weekly Doula Circle</p>
+                  <p class="font-serif text-lg font-bold">Pelvic Floor & Labor Preparation</p>
+                  <p class="text-xs text-parchment-200">With Master Elena Vance & Registered Birth Doulas</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-sandalwood-50/80 border border-sandalwood-200/80 space-y-2">
+              <div class="flex items-center justify-between text-xs font-semibold text-forest-950">
+                <span>Next Live Gathering:</span>
+                <span class="text-sandalwood-800 bg-sandalwood-100 px-2 py-0.5 rounded-md font-bold">Saturday, 10:00 AM EST</span>
+              </div>
+              <p class="text-xs text-zen-muted">Includes live Q&A on breech positioning, partner massage techniques, and hospital bag setup.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       PHILOSOPHY & MATTER: GARBHA SANSKAR AND OBSTETRIC SCIENCE
+       ========================================================================= -->
+  <section class="py-16 bg-white border-b border-zen-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="px-3.5 py-1.5 rounded-full bg-sandalwood-50 border border-sandalwood-200 text-sandalwood-800 text-xs font-bold uppercase tracking-wider">
+          Vedic Lineage • Maternal Physiology
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-forest-950 mt-3 mb-4">
+          The Sacred Philosophy & Matter of Garbha Sanskar
+        </h2>
+        <p class="text-sm sm:text-base text-zen-muted leading-relaxed">
+          In Ayurveda, the womb is a sanctum. The child experiences every emotional surge, hormonal pulse, and breath pattern of the mother.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Pillar 1 -->
+        <div class="p-7 rounded-3xl bg-parchment-50 border border-zen-border shadow-xs hover:shadow-saas transition-all">
+          <div class="w-12 h-12 rounded-2xl bg-sandalwood-100 text-sandalwood-800 flex items-center justify-center mb-5">
+            <span class="material-symbols-outlined text-2xl">spa</span>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-forest-950 mb-3">1. Epigenetic Resonance in the Womb</h3>
+          <p class="text-xs sm:text-sm text-zen-muted leading-relaxed mb-4">
+            According to the <em>Charaka Samhita</em>, the mental calm of the mother shapes the baby's <em>Satva Guna</em> (clarity, tranquility, emotional resilience).
+          </p>
+          <p class="text-xs sm:text-sm text-zen-muted leading-relaxed">
+            Modern neuro-endocrinology confirms that daily maternal meditation lowers placental cortisol transfer, optimizing fetal autonomic nervous system and sleep architecture.
+          </p>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="p-7 rounded-3xl bg-parchment-50 border border-zen-border shadow-xs hover:shadow-saas transition-all">
+          <div class="w-12 h-12 rounded-2xl bg-sandalwood-100 text-sandalwood-800 flex items-center justify-center mb-5">
+            <span class="material-symbols-outlined text-2xl">healing</span>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-forest-950 mb-3">2. Pelvic Inlet Biomechanics</h3>
+          <p class="text-xs sm:text-sm text-zen-muted leading-relaxed mb-4">
+            During pregnancy, the hormone <em>relaxin</em> loosens ligaments, causing sacroiliac (SI) joint instability, sciatica, and pubic symphysis dysfunction (SPD).
+          </p>
+          <p class="text-xs sm:text-sm text-zen-muted leading-relaxed">
+            Our alignment cues decompress the piriformis, align the sacrum, and optimize fetal presentation into the left-occiput-anterior (LOA) position for smoother labor progression.
+          </p>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="p-7 rounded-3xl bg-parchment-50 border border-zen-border shadow-xs hover:shadow-saas transition-all">
+          <div class="w-12 h-12 rounded-2xl bg-sandalwood-100 text-sandalwood-800 flex items-center justify-center mb-5">
+            <span class="material-symbols-outlined text-2xl">air</span>
+          </div>
+          <h3 class="font-serif text-xl font-bold text-forest-950 mb-3">3. The Golden Thread Exhale</h3>
+          <p class="text-xs sm:text-sm text-zen-muted leading-relaxed mb-4">
+            During labor surges (contractions), fear triggers adrenaline, causing the sphincter muscles of the pelvic floor to clamp down, prolonging painful labor.
+          </p>
+          <p class="text-xs sm:text-sm text-zen-muted leading-relaxed">
+            The Golden Thread breath releases tension in the jaw and perineum simultaneously (via the vagus-sphincter reflex), inducing deep natural endorphin anesthesia.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       TRIMESTER-BY-TRIMESTER INTERACTIVE SYLLABUS
+       ========================================================================= -->
+  <section class="py-16 bg-parchment-100/60 border-b border-zen-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="text-xs font-bold uppercase tracking-wider text-sandalwood-700">Stage Specific Guidance</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-forest-950 mt-1">Trimester-by-Trimester Practice Matrix</h2>
+        <p class="text-sm text-zen-muted mt-2">Tailored movement, breath, and mindset for each evolutionary stage of your pregnancy.</p>
+      </div>
+
+      <!-- Trimester Tabs -->
+      <div class="flex items-center justify-center gap-2 p-1.5 bg-white rounded-2xl border border-zen-border shadow-xs max-w-xl mx-auto mb-10 overflow-x-auto">
+        <button onclick="switchTrimester('t1', this)" class="trimester-btn active px-4 py-2 rounded-xl text-xs font-bold text-forest-950 bg-sandalwood-100 shadow-xs transition-all whitespace-nowrap">
+          Trimester 1 (Weeks 1-12)
+        </button>
+        <button onclick="switchTrimester('t2', this)" class="trimester-btn px-4 py-2 rounded-xl text-xs font-bold text-zen-muted hover:text-forest-950 transition-all whitespace-nowrap">
+          Trimester 2 (Weeks 13-26)
+        </button>
+        <button onclick="switchTrimester('t3', this)" class="trimester-btn px-4 py-2 rounded-xl text-xs font-bold text-zen-muted hover:text-forest-950 transition-all whitespace-nowrap">
+          Trimester 3 (Weeks 27-40)
+        </button>
+        <button onclick="switchTrimester('t4', this)" class="trimester-btn px-4 py-2 rounded-xl text-xs font-bold text-zen-muted hover:text-forest-950 transition-all whitespace-nowrap">
+          Postnatal (4th Trimester)
+        </button>
+      </div>
+
+      <!-- Trimester 1 Content -->
+      <div id="trimesterContent-t1" class="trimester-content bg-white rounded-3xl p-6 sm:p-10 border border-zen-border shadow-saas">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div class="space-y-4">
+            <span class="px-3 py-1 rounded-md bg-sandalwood-100 text-sandalwood-800 text-xs font-bold uppercase">Phase: Implantation & Grounding</span>
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-forest-950">Gentle Grounding & Morning Sickness Relief</h3>
+            <p class="text-sm text-zen-muted leading-relaxed">
+              In this delicate introductory stage, the embryo is rooting into the uterine wall. Energy levels fluctuate dramatically, and morning nausea is frequent. We avoid any heat generation, deep twisting, or strenuous abdominal contractions.
+            </p>
+            <div class="space-y-2 pt-2 text-xs sm:text-sm text-zen-dark font-medium">
+              <p class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-600 text-base">check_circle</span> <strong>Cooling Sitali Breath:</strong> Relieves gastric acidity and morning nausea.</p>
+              <p class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-600 text-base">check_circle</span> <strong>Gentle Supta Baddha Konasana:</strong> Restorative supported chest and heart opener.</p>
+              <p class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-600 text-base">check_circle</span> <strong>Grounding Root Sadhanas:</strong> Cultivating calm trust and reducing first-trimester anxiety.</p>
+            </div>
+          </div>
+          <div class="bg-parchment-50 rounded-2xl p-6 border border-zen-border">
+            <h4 class="font-serif text-base font-bold text-forest-950 mb-3">Clinical Safeguards for Weeks 1–12</h4>
+            <ul class="text-xs text-zen-muted space-y-2.5">
+              <li>❌ <strong>Zero intense core work:</strong> No boat pose (Navasana) or aggressive abdominal bracing.</li>
+              <li>❌ <strong>Avoid hot environments:</strong> Body temperature must remain under 101°F (38.3°C).</li>
+              <li>✅ <strong>Focus on parasympathetic rest:</strong> 20 minutes of daily restorative yoga nidra.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trimester 2 Content -->
+      <div id="trimesterContent-t2" class="trimester-content hidden bg-white rounded-3xl p-6 sm:p-10 border border-zen-border shadow-saas">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div class="space-y-4">
+            <span class="px-3 py-1 rounded-md bg-emerald-100 text-emerald-800 text-xs font-bold uppercase">Phase: The Golden Second Trimester</span>
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-forest-950">Pelvic Stability & Sciatic Relief</h3>
+            <p class="text-sm text-zen-muted leading-relaxed">
+              Energy often returns in full! The bump is visibly growing, shifting your center of gravity forward and putting strain on the lumbar lordosis and piriformis muscles. We build stamina while protecting loose joints from overstretching.
+            </p>
+            <div class="space-y-2 pt-2 text-xs sm:text-sm text-zen-dark font-medium">
+              <p class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-600 text-base">check_circle</span> <strong>Supported Cat-Cow (Marjaryasana):</strong> Unloads fetal weight from spine and discs.</p>
+              <p class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-600 text-base">check_circle</span> <strong>Goddess Pose (Utkata Konasana):</strong> Builds quadriceps and pelvic floor endurance.</p>
+              <p class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-600 text-base">check_circle</span> <strong>Supported Pigeon with Bolsters:</strong> Releases stubborn sciatic nerve tightness.</p>
+            </div>
+          </div>
+          <div class="bg-parchment-50 rounded-2xl p-6 border border-zen-border">
+            <h4 class="font-serif text-base font-bold text-forest-950 mb-3">Clinical Safeguards for Weeks 13–26</h4>
+            <ul class="text-xs text-zen-muted space-y-2.5">
+              <li>❌ <strong>Stop lying flat on your back (Supine):</strong> Prevents compression of the inferior vena cava.</li>
+              <li>❌ <strong>Do not over-stretch:</strong> Relaxin makes joints artificially loose; maintain 75% max range.</li>
+              <li>✅ <strong>Use side-lying Savasana:</strong> Prop pillows between knees and under bump.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trimester 3 Content -->
+      <div id="trimesterContent-t3" class="trimester-content hidden bg-white rounded-3xl p-6 sm:p-10 border border-zen-border shadow-saas">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div class="space-y-4">
+            <span class="px-3 py-1 rounded-md bg-sandalwood-100 text-sandalwood-800 text-xs font-bold uppercase">Phase: Labor Preparation & Birth Canal</span>
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-forest-950">Pelvic Opening & Labor Breath Mastery</h3>
+            <p class="text-sm text-zen-muted leading-relaxed">
+              Preparing the body and mind for the marathon of labor. We focus on opening the pelvic inlet, encouraging optimal baby positioning (head down, spine outward), and instilling serene confidence for the birthing room.
+            </p>
+            <div class="space-y-2 pt-2 text-xs sm:text-sm text-zen-dark font-medium">
+              <p class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-600 text-base">check_circle</span> <strong>Malasana Squats with Block:</strong> Widens the pelvic outlet by up to 28%.</p>
+              <p class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-600 text-base">check_circle</span> <strong>Pelvic Tilts on Birth Ball:</strong> Promotes natural descent of the baby's head.</p>
+              <p class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-600 text-base">check_circle</span> <strong>Golden Thread Labor Breathing:</strong> Practiced in contraction simulation holds.</p>
+            </div>
+          </div>
+          <div class="bg-parchment-50 rounded-2xl p-6 border border-zen-border">
+            <h4 class="font-serif text-base font-bold text-forest-950 mb-3">Clinical Safeguards for Weeks 27–40</h4>
+            <ul class="text-xs text-zen-muted space-y-2.5">
+              <li>❌ <strong>No deep squats if baby is breech after week 34:</strong> Prioritize pelvic tilts instead.</li>
+              <li>❌ <strong>Avoid sudden jarring movements:</strong> Sturdy chair or wall support at all times.</li>
+              <li>✅ <strong>Focus on pelvic floor surrender:</strong> Learning to consciously release rather than clench.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Postnatal Content -->
+      <div id="trimesterContent-t4" class="trimester-content hidden bg-white rounded-3xl p-6 sm:p-10 border border-zen-border shadow-saas">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div class="space-y-4">
+            <span class="px-3 py-1 rounded-md bg-forest-100 text-forest-800 text-xs font-bold uppercase">Phase: The 4th Trimester (Postpartum Recovery)</span>
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-forest-950">Diastasis Recti Repair & Nursing Posture</h3>
+            <p class="text-sm text-zen-muted leading-relaxed">
+              The first 12 weeks after delivery require deep gentleness. We safely knit together the linea alba (diastasis recti safe), rehabilitate the transverse abdominis, and release neck and upper shoulder fatigue from breastfeeding and holding baby.
+            </p>
+            <div class="space-y-2 pt-2 text-xs sm:text-sm text-zen-dark font-medium">
+              <p class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-600 text-base">check_circle</span> <strong>Transverse Abdominis Drawing:</strong> Gentle exhale engagement without crunches.</p>
+              <p class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-600 text-base">check_circle</span> <strong>Garudasana (Eagle Arms):</strong> Releases acute thoracic tension from nursing.</p>
+              <p class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-600 text-base">check_circle</span> <strong>Pelvic Floor Ascending Tones:</strong> Restores muscular tone and bladder control.</p>
+            </div>
+          </div>
+          <div class="bg-parchment-50 rounded-2xl p-6 border border-zen-border">
+            <h4 class="font-serif text-base font-bold text-forest-950 mb-3">Postnatal Medical Clearance</h4>
+            <ul class="text-xs text-zen-muted space-y-2.5">
+              <li>✅ <strong>6-week OB/GYN clearance required</strong> before starting active postpartum recovery.</li>
+              <li>✅ <strong>8-10 weeks for C-Section births</strong> to ensure deep fascial scar remodeling.</li>
+              <li>❌ <strong>Avoid crunches or planks</strong> until diastasis recti separation is verified under 2 finger-widths.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SAFE VS CONTRAINDICATED ASANAS TABLE
+       ========================================================================= -->
+  <section class="py-16 bg-white border-b border-zen-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl mb-10">
+        <span class="text-xs font-bold uppercase tracking-wider text-sandalwood-700">Maternal Safety Reference</span>
+        <h2 class="font-serif text-3xl font-bold text-forest-950 mt-1">Safe vs. Contraindicated Postures</h2>
+        <p class="text-sm text-zen-muted mt-2">Clear anatomical guidance for expectant mothers and yoga instructors.</p>
+      </div>
+
+      <div class="overflow-x-auto rounded-3xl border border-zen-border shadow-xs">
+        <table class="w-full text-left text-xs sm:text-sm">
+          <thead class="bg-forest-900 text-white font-serif">
+            <tr>
+              <th class="p-4 sm:p-5">Movement Category</th>
+              <th class="p-4 sm:p-5">Strictly Avoid During Pregnancy</th>
+              <th class="p-4 sm:p-5">Safe Therapeutic Replacement</th>
+              <th class="p-4 sm:p-5">Anatomical Justification</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-zen-border bg-white text-zen-dark">
+            <tr class="hover:bg-sandalwood-50/40 transition-colors">
+              <td class="p-4 sm:p-5 font-bold text-forest-950">Prone Postures (Belly Down)</td>
+              <td class="p-4 sm:p-5 text-rose-700 font-medium">Cobra (Bhujangasana), Bow (Dhanurasana), Locust (Salabhasana)</td>
+              <td class="p-4 sm:p-5 text-emerald-800 font-medium">Hands-and-knees Cow Pose, Supported Sphinx with bolster under chest</td>
+              <td class="p-4 sm:p-5 text-zen-muted">Prevents direct external mechanical pressure onto uterus and placenta</td>
+            </tr>
+            <tr class="hover:bg-sandalwood-50/40 transition-colors">
+              <td class="p-4 sm:p-5 font-bold text-forest-950">Closed Torso Twists</td>
+              <td class="p-4 sm:p-5 text-rose-700 font-medium">Revolved Triangle (Parivrtta Trikonasana), Marichyasana III</td>
+              <td class="p-4 sm:p-5 text-emerald-800 font-medium">Open chest twists (twisting away from the knee), gentle seated open spiral</td>
+              <td class="p-4 sm:p-5 text-zen-muted">Closed twists compress the abdominal wall and compromise uterine artery perfusion</td>
+            </tr>
+            <tr class="hover:bg-sandalwood-50/40 transition-colors">
+              <td class="p-4 sm:p-5 font-bold text-forest-950">Breath Retentions (Kumbhaka)</td>
+              <td class="p-4 sm:p-5 text-rose-700 font-medium">Holding the breath in (Antara) or out (Bahya), Kapalabhati, Bhastrika</td>
+              <td class="p-4 sm:p-5 text-emerald-800 font-medium">Continuous Golden Thread breath, gentle Ujjayi, Sitali, Nadi Shodhana without holds</td>
+              <td class="p-4 sm:p-5 text-zen-muted">Breath retention reduces arterial oxygen saturation to the fetal umbilical cord</td>
+            </tr>
+            <tr class="hover:bg-sandalwood-50/40 transition-colors">
+              <td class="p-4 sm:p-5 font-bold text-forest-950">Supine Postures (Flat on Back)</td>
+              <td class="p-4 sm:p-5 text-rose-700 font-medium">Standard floor Savasana, Supta Padangusthasana without props (after week 20)</td>
+              <td class="p-4 sm:p-5 text-emerald-800 font-medium">Left lateral side-lying Savasana with birth pillow, inclined torso setup</td>
+              <td class="p-4 sm:p-5 text-zen-muted">Fetal weight presses on the inferior vena cava, reducing maternal cardiac output</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       INTERACTIVE LABOR BREATHING AUDIO / PACER
+       ========================================================================= -->
+  <section class="py-16 bg-forest-950 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-6 space-y-6">
+          <span class="text-xs font-bold uppercase tracking-wider text-sandalwood-300">Natural Birth Pain Relief Technique</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-parchment-100">The Golden Thread Exhale Simulator</h2>
+          <p class="text-sm text-parchment-300 leading-relaxed">
+            Inhale deeply through your nose, expanding your ribs. Then, part your lips softly into a gentle smile and breathe out like you are blowing a shimmering golden thread across a calm lake. Feel your jaw unclench, your shoulders drop, and your pelvic bowl soften.
+          </p>
+          
+          <div class="p-5 rounded-2xl bg-forest-900 border border-forest-800 space-y-3">
+            <div class="flex items-center gap-3">
+              <span class="w-3 h-3 rounded-full bg-sandalwood-400"></span>
+              <span class="text-xs font-bold uppercase text-parchment-200">The Jaw-Pelvis Connection</span>
+            </div>
+            <p class="text-xs text-parchment-300 leading-relaxed">
+              The fascia of the temporomandibular joint (jaw) connects through the deep front line to the fascia of the pelvic diaphragm. An open, soft jaw creates an open, welcoming birth canal.
+            </p>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <button onclick="playLaborSingingBowl()" class="px-6 py-3 rounded-full bg-sandalwood-500 hover:bg-sandalwood-400 text-forest-950 font-bold text-xs uppercase tracking-wider transition-all shadow-md flex items-center gap-2">
+              <span class="material-symbols-outlined text-[18px]">graphic_eq</span>
+              <span>Sound Himalayan Singing Bowl (F Frequency)</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 flex flex-col items-center justify-center">
+          <div class="relative w-64 h-64 sm:w-72 sm:h-72 rounded-full border border-sandalwood-400/30 flex items-center justify-center p-6 bg-forest-900/40 backdrop-blur-md shadow-2xl">
+            <div id="laborPacerCircle" class="w-48 h-48 sm:w-56 sm:h-56 rounded-full bg-gradient-to-tr from-sandalwood-600/40 to-sandalwood-400/20 border-2 border-sandalwood-400/60 flex flex-col items-center justify-center text-center p-4 transition-all duration-1000">
+              <span id="laborPacerText" class="font-serif text-2xl font-bold text-parchment-100">Breathe In</span>
+              <span id="laborPacerSub" class="text-xs text-sandalwood-200 mt-1">Expanding Ribs</span>
+              <span id="laborPacerSeconds" class="font-mono text-xl font-bold text-emerald-300 mt-2">4s</span>
+            </div>
+          </div>
+          <button onclick="toggleLaborPacer()" id="laborPacerBtn" class="mt-6 px-5 py-2 rounded-full bg-forest-800 hover:bg-forest-700 text-xs font-bold uppercase tracking-wider text-parchment-200 border border-forest-700">
+            Start Visual Breath Guide
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       WEEKLY LIVE PRENATAL CLASSES & DOULA CIRCLE
+       ========================================================================= -->
+  <section class="py-16 bg-white border-b border-zen-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-sandalwood-700">Live Virtual Studio</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold mt-1 text-forest-950">Weekly Prenatal & Doula Cohort</h2>
+          <p class="text-sm text-zen-muted mt-2">Small, intimate circles guided by certified prenatal therapists and licensed birth doulas.</p>
+        </div>
+        <div class="flex items-center gap-2 text-xs text-zen-muted">
+          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          <span>Camera-on interactive guidance with personalized modifications</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Class 1 -->
+        <div class="p-6 rounded-3xl bg-parchment-50 border border-zen-border flex flex-col justify-between hover:shadow-saas transition-all">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded-md bg-sandalwood-100 text-sandalwood-800 text-[11px] font-bold uppercase">All Trimesters</span>
+              <span class="text-xs text-zen-muted">50 Mins</span>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-forest-950 mb-2">Garbha Prana Trimester Flow</h3>
+            <p class="text-xs text-zen-muted leading-relaxed mb-4">
+              Gentle hip opening, sciatica release, and calming prenatal breathwork adapted to your exact gestational week.
+            </p>
+            <div class="text-xs text-zen-dark space-y-1 mb-6">
+              <p>🕒 Tue, Thu, Sat • 10:00 AM EST</p>
+              <p>👤 Master Elena Vance (Certified Prenatal Lead)</p>
+            </div>
+          </div>
+          <button onclick="openPrenatalBookingModal('Garbha Prana Trimester Flow', 'Master Elena Vance', 'Tue/Thu/Sat • 10:00 AM EST')" class="w-full py-2.5 rounded-xl bg-forest-900 hover:bg-forest-800 text-white font-bold text-xs uppercase tracking-wider transition-colors">
+            Reserve Free Pass
+          </button>
+        </div>
+
+        <!-- Class 2 -->
+        <div class="p-6 rounded-3xl bg-parchment-50 border border-zen-border flex flex-col justify-between hover:shadow-saas transition-all">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded-md bg-sandalwood-100 text-sandalwood-800 text-[11px] font-bold uppercase">Trimester 3 & Birth Prep</span>
+              <span class="text-xs text-zen-muted">60 Mins</span>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-forest-950 mb-2">Pelvic Floor, Labor Breathing & Partner Circle</h3>
+            <p class="text-xs text-zen-muted leading-relaxed mb-4">
+              Active labor positions, partner counter-pressure massage techniques, and hospital bag birth affirmations.
+            </p>
+            <div class="text-xs text-zen-dark space-y-1 mb-6">
+              <p>🕒 Every Sunday • 11:30 AM EST</p>
+              <p>👤 Doula Sarah Lin, CD(DONA) & Faculty</p>
+            </div>
+          </div>
+          <button onclick="openPrenatalBookingModal('Pelvic Floor & Partner Circle', 'Doula Sarah Lin', 'Sunday • 11:30 AM EST')" class="w-full py-2.5 rounded-xl bg-forest-900 hover:bg-forest-800 text-white font-bold text-xs uppercase tracking-wider transition-colors">
+            Reserve Free Pass
+          </button>
+        </div>
+
+        <!-- Class 3 -->
+        <div class="p-6 rounded-3xl bg-parchment-50 border border-zen-border flex flex-col justify-between hover:shadow-saas transition-all">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded-md bg-forest-100 text-forest-800 text-[11px] font-bold uppercase">Postpartum Care</span>
+              <span class="text-xs text-zen-muted">45 Mins</span>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-forest-950 mb-2">Postnatal Core, Diastasis & Baby Bonding</h3>
+            <p class="text-xs text-zen-muted leading-relaxed mb-4">
+              Safe rehabilitation for pelvic floor and abdominal separation, soothing nursing back aches. Babies warmly welcome!
+            </p>
+            <div class="text-xs text-zen-dark space-y-1 mb-6">
+              <p>🕒 Mon, Wed • 01:00 PM EST</p>
+              <p>👤 Dr. Priyashree & Postnatal Team</p>
+            </div>
+          </div>
+          <button onclick="openPrenatalBookingModal('Postnatal Core & Baby Bonding', 'Dr. Priyashree', 'Mon/Wed • 01:00 PM EST')" class="w-full py-2.5 rounded-xl bg-forest-900 hover:bg-forest-800 text-white font-bold text-xs uppercase tracking-wider transition-colors">
+            Reserve Free Pass
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       FREQUENTLY ASKED QUESTIONS (PRENATAL)
+       ========================================================================= -->
+  <section class="py-16 bg-parchment-50 border-b border-zen-border">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-12">
+        <h2 class="font-serif text-3xl font-bold text-forest-950">Frequently Asked Questions for Expectant Mothers</h2>
+        <p class="text-sm text-zen-muted mt-2">Clear, compassionate answers for a safe and empowering journey.</p>
+      </div>
+
+      <div class="space-y-4">
+        
+        <details class="group bg-white rounded-2xl p-5 border border-zen-border shadow-xs [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+          <summary class="flex items-center justify-between text-base font-serif font-bold text-forest-950">
+            <span>When can I start practicing prenatal yoga?</span>
+            <span class="material-symbols-outlined text-sandalwood-600 group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <p class="text-xs sm:text-sm text-zen-muted mt-3 leading-relaxed">
+            You can begin gentle breathing and meditative sadhanas as early as Week 6 with your OB/GYN or midwife's consent. For physical movement, most mothers begin actively between Weeks 12 and 14 when morning fatigue subsides.
+          </p>
+        </details>
+
+        <details class="group bg-white rounded-2xl p-5 border border-zen-border shadow-xs [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+          <summary class="flex items-center justify-between text-base font-serif font-bold text-forest-950">
+            <span>What if my baby is in breech presentation?</span>
+            <span class="material-symbols-outlined text-sandalwood-600 group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <p class="text-xs sm:text-sm text-zen-muted mt-3 leading-relaxed">
+            If your baby is in breech presentation past Week 32, we modify all postures immediately. We avoid deep Malasana squats (which lock the breech head at the top) and guide you through gentle supported pelvic elevation and inversions (such as forward-leaning inversions on a couch) under doula supervision to give baby room to turn.
+          </p>
+        </details>
+
+        <details class="group bg-white rounded-2xl p-5 border border-zen-border shadow-xs [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+          <summary class="flex items-center justify-between text-base font-serif font-bold text-forest-950">
+            <span>How does this practice assist during actual hospital or home labor?</span>
+            <span class="material-symbols-outlined text-sandalwood-600 group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <p class="text-xs sm:text-sm text-zen-muted mt-3 leading-relaxed">
+            The breathing techniques you master become second nature during labor surges. Mothers who practice Golden Thread breathing report reduced perception of pain, shorter active labor stages, and a significantly lower rate of emergency interventions.
+          </p>
+        </details>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="bg-forest-950 text-parchment-200 py-12 border-t border-forest-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-6 pb-8 border-b border-forest-900">
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl bg-forest-800 flex items-center justify-center text-sandalwood-300">
+            <span class="material-symbols-outlined text-xl">spa</span>
+          </div>
+          <span class="font-serif text-2xl font-bold text-white">Aaranyak PranaFlow</span>
+        </a>
+        <div class="flex flex-wrap items-center gap-6 text-xs text-parchment-300">
+          <a href="index.html" class="hover:text-white transition-colors">Main Studio</a>
+          <a href="prenatal-yoga.html" class="text-white font-bold">Prenatal Yoga</a>
+          <a href="senior-yoga.html" class="hover:text-white transition-colors">Senior Yoga</a>
+          <a href="certifications.html" class="hover:text-white transition-colors">Certifications</a>
+        </div>
+      </div>
+      <div class="pt-8 text-center text-xs text-parchment-400">
+        <p>© 2026 Aaranyak Yoga Academy & SaaS. Medical Disclaimer: Prenatal yoga is for wellness and does not replace medical obstetric care. Always consult your obstetrician or midwife.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       SHARED PRENATAL BOOKING MODAL
+       ========================================================================= -->
+  <div id="prenatalBookingModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop bg-forest-950/80 backdrop-blur-md modal-hidden" onclick="handlePrenatalModalBackdrop(event)">
+    <div class="relative w-full max-w-lg bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-zen-border" onclick="event.stopPropagation()">
+      <button onclick="closePrenatalBookingModal()" class="absolute top-5 right-5 text-zen-muted hover:text-zen-dark p-2 rounded-xl hover:bg-parchment-100 transition-colors">
+        <span class="material-symbols-outlined text-xl">close</span>
+      </button>
+
+      <div class="mb-5">
+        <span class="text-xs font-bold uppercase tracking-wider text-sandalwood-700 bg-sandalwood-100 px-2.5 py-1 rounded-md">Complimentary Maternal Pass</span>
+        <h3 id="prenatalBookingClassTitle" class="font-serif text-2xl font-bold text-forest-950 mt-2">Garbha Prana Trimester Flow</h3>
+        <p id="prenatalBookingInstructor" class="text-xs text-zen-muted mt-1">Instructor: Master Elena Vance</p>
+      </div>
+
+      <form onsubmit="handlePrenatalBookingSubmit(event)" class="space-y-4 text-left">
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-zen-dark mb-1">Your Full Name</label>
+          <input type="text" required placeholder="e.g., Jennifer Hayes" class="w-full px-4 py-2.5 rounded-xl border border-zen-border text-sm focus:outline-none focus:ring-2 focus:ring-sandalwood-500">
+        </div>
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-zen-dark mb-1">Email Address</label>
+          <input type="email" required placeholder="jennifer@example.com" class="w-full px-4 py-2.5 rounded-xl border border-zen-border text-sm focus:outline-none focus:ring-2 focus:ring-sandalwood-500">
+        </div>
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-zen-dark mb-1">Current Gestational Week / Due Date</label>
+          <input type="text" placeholder="e.g., 24 Weeks (Due Nov 15)" class="w-full px-4 py-2.5 rounded-xl border border-zen-border text-sm focus:outline-none focus:ring-2 focus:ring-sandalwood-500">
+        </div>
+
+        <div class="pt-2">
+          <button type="submit" class="w-full py-3 rounded-xl bg-forest-900 hover:bg-forest-800 text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all">
+            Confirm Free Prenatal Circle
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function toggleMobileNav() {
+      const nav = document.getElementById('mobileNav');
+      nav.classList.toggle('hidden');
+    }
+
+    function switchTrimester(key, btn) {
+      document.querySelectorAll('.trimester-btn').forEach(b => {
+        b.className = 'trimester-btn px-4 py-2 rounded-xl text-xs font-bold text-zen-muted hover:text-forest-950 transition-all whitespace-nowrap';
+      });
+      if (btn) {
+        btn.className = 'trimester-btn active px-4 py-2 rounded-xl text-xs font-bold text-forest-950 bg-sandalwood-100 shadow-xs transition-all whitespace-nowrap';
+      }
+      document.querySelectorAll('.trimester-content').forEach(c => c.classList.add('hidden'));
+      const target = document.getElementById('trimesterContent-' + key);
+      if (target) target.classList.remove('hidden');
+    }
+
+    function openPrenatalBookingModal(title, instructor, time) {
+      document.getElementById('prenatalBookingClassTitle').innerText = title;
+      document.getElementById('prenatalBookingInstructor').innerText = 'Instructor: ' + instructor + ' • ' + time;
+      const modal = document.getElementById('prenatalBookingModal');
+      modal.classList.remove('modal-hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePrenatalBookingModal() {
+      const modal = document.getElementById('prenatalBookingModal');
+      modal.classList.add('modal-hidden');
+      document.body.style.overflow = '';
+    }
+
+    function handlePrenatalModalBackdrop(e) {
+      if (e.target.id === 'prenatalBookingModal') {
+        closePrenatalBookingModal();
+      }
+    }
+
+    function handlePrenatalBookingSubmit(e) {
+      e.preventDefault();
+      closePrenatalBookingModal();
+      showToast('Prenatal Pass Confirmed!', 'Zoom link & Doula preparation guide sent to your email.', 'favorite');
+    }
+
+    function playLaborSingingBowl() {
+      try {
+        const ctx = new (window.AudioContext || window.webkitAudioContext)();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(349.23, ctx.currentTime); // F note (Heart Chakra)
+        gain.gain.setValueAtTime(0.3, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 4.5);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + 4.5);
+      } catch (e) {}
+      showToast('Golden Thread Audio Guide', 'F-frequency heart chakra tone sounded for labor calm.', 'graphic_eq');
+    }
+
+    let pacerInterval = null;
+    let pacerStep = 0;
+    function toggleLaborPacer() {
+      const btn = document.getElementById('laborPacerBtn');
+      const textEl = document.getElementById('laborPacerText');
+      const subEl = document.getElementById('laborPacerSub');
+      const secEl = document.getElementById('laborPacerSeconds');
+      const circleEl = document.getElementById('laborPacerCircle');
+
+      if (pacerInterval) {
+        clearInterval(pacerInterval);
+        pacerInterval = null;
+        btn.innerText = 'Start Visual Breath Guide';
+        textEl.innerText = 'Breathe In';
+        subEl.innerText = 'Expanding Ribs';
+        secEl.innerText = '4s';
+        circleEl.style.transform = 'scale(1)';
+        return;
+      }
+
+      btn.innerText = 'Stop Breath Guide';
+      let secondsLeft = 4;
+      let phase = 'inhale'; // inhale (4s) -> exhale (8s)
+
+      pacerInterval = setInterval(() => {
+        secondsLeft--;
+        if (secondsLeft < 0) {
+          if (phase === 'inhale') {
+            phase = 'exhale';
+            secondsLeft = 7;
+            textEl.innerText = 'Golden Thread Exhale';
+            subEl.innerText = 'Blowing soft thread, release jaw';
+            circleEl.style.transform = 'scale(0.85)';
+          } else {
+            phase = 'inhale';
+            secondsLeft = 4;
+            textEl.innerText = 'Breathe In';
+            subEl.innerText = 'Expanding ribs and womb space';
+            circleEl.style.transform = 'scale(1.15)';
+          }
+        }
+        secEl.innerText = secondsLeft + 's';
+      }, 1000);
+    }
+
+    function showToast(title, message, icon = 'info') {
+      const container = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+      toast.className = 'flex items-center gap-3 bg-forest-950 text-white px-4 py-3 rounded-2xl shadow-xl border border-forest-800 pointer-events-auto transform translate-y-4 opacity-0 transition-all duration-300';
+      toast.innerHTML = `
+        <span class="material-symbols-outlined text-sandalwood-300 text-xl">${icon}</span>
+        <div>
+          <div class="font-bold text-xs">${title}</div>
+          <div class="text-[11px] text-parchment-300">${message}</div>
+        </div>
+      `;
+      container.appendChild(toast);
+      setTimeout(() => { toast.classList.remove('translate-y-4', 'opacity-0'); }, 10);
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-2');
+        setTimeout(() => toast.remove(), 300);
+      }, 4000);
+    }
+  </script>
+
+</body>
+</html>
+

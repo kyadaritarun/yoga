@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Teacher Certifications (RYT-200 / RYT-500) • Aaranyak Yoga Academy</title>
+  
+  <!-- Google Fonts: Noto Serif + Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Material Symbols Outlined -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            forest: {
+              50: '#F0F7F4',
+              100: '#DFEFEA',
+              200: '#C0DFD6',
+              300: '#94C7B8',
+              400: '#5FA995',
+              500: '#3D8C78',
+              600: '#2C7060',
+              700: '#235A4D',
+              800: '#1C483F',
+              900: '#143831',
+              950: '#0B211D',
+            },
+            sandalwood: {
+              50: '#FDF8F5',
+              100: '#FBF0E9',
+              200: '#F6DFD1',
+              300: '#EEC5AE',
+              400: '#E4A283',
+              500: '#D57C54',
+              600: '#C25D34',
+              700: '#A24A28',
+              800: '#833D25',
+              900: '#6C3622',
+            },
+            parchment: {
+              50: '#FDFCF7',
+              100: '#F9F7EE',
+              200: '#F4EFE0',
+              300: '#EDE4CB',
+              400: '#E1D3AF',
+              500: '#CEBC8E',
+            },
+            zen: {
+              dark: '#0E1715',
+              card: '#FFFFFF',
+              border: '#E8E5DC',
+              muted: '#667571'
+            }
+          },
+          fontFamily: {
+            serif: ['"Noto Serif"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          boxShadow: {
+            'saas': '0 10px 30px -5px rgba(20, 56, 49, 0.07), 0 0 0 1px rgba(20, 56, 49, 0.05)',
+            'saas-hover': '0 20px 40px -10px rgba(20, 56, 49, 0.12), 0 0 0 1px rgba(44, 112, 96, 0.2)',
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #F4EFE0; }
+    ::-webkit-scrollbar-thumb { background: #A7F3D0; border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #10B981; }
+    .modal-hidden { opacity: 0; pointer-events: none; }
+    .modal-backdrop { transition: opacity 0.25s ease-in-out; }
+  </style>
+</head>
+
+<body class="bg-parchment-50 text-zen-dark font-sans antialiased selection:bg-emerald-100 selection:text-emerald-950">
+
+  <!-- =========================================================================
+       GLOBAL SAAS TOAST NOTIFICATION CONTAINER
+       ========================================================================= -->
+  <div id="toastContainer" class="fixed bottom-5 right-5 z-[9999] flex flex-col gap-2 pointer-events-none"></div>
+
+  <!-- =========================================================================
+       TOP ANNOUNCEMENT BANNER
+       ========================================================================= -->
+  <div class="bg-forest-950 text-parchment-200 text-xs py-2 px-4 border-b border-forest-800/60">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>Aaranyak Academy Admissions: Applications Open for 2025-2026 Himalayan & Global Hybrid Cohorts</span>
+      </div>
+      <div class="hidden sm:flex items-center gap-4 text-[11px] text-parchment-400">
+        <a href="index.html" class="hover:text-white transition-colors flex items-center gap-1">
+          <span class="material-symbols-outlined text-[14px]">arrow_back</span>
+          <span>Back to Main Studio</span>
+        </a>
+        <span class="text-forest-700">|</span>
+        <span>Yoga Alliance USA & Worldwide Accredited</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       STICKY HEADER NAVIGATION BAR
+       ========================================================================= -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-zen-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-3.5 group flex-shrink-0">
+        <div class="w-11 h-11 rounded-2xl bg-forest-900 flex items-center justify-center text-white shadow-sm group-hover:scale-105 transition-transform duration-300">
+          <span class="material-symbols-outlined text-2xl text-emerald-300">workspace_premium</span>
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <span class="font-serif text-2xl font-bold tracking-tight text-forest-950">Aaranyak</span>
+            <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 uppercase tracking-wider">Academy</span>
+          </div>
+          <p class="text-[11px] text-zen-muted font-medium tracking-wide whitespace-nowrap -mt-0.5">Teacher Training & Accreditation Council</p>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-1 bg-parchment-100/90 p-1.5 rounded-full border border-zen-border/90 shadow-[inset_0_1px_2px_rgba(0,0,0,0.03)] flex-shrink-0">
+        <a href="index.html" class="px-3.5 py-1.5 text-[13px] font-semibold text-zen-muted hover:text-forest-950 hover:bg-white rounded-full transition-all whitespace-nowrap flex items-center gap-1">
+          <span class="material-symbols-outlined text-[15px]">home</span>
+          <span>Home</span>
+        </a>
+        <a href="index.html#offerings" class="px-3.5 py-1.5 text-[13px] font-semibold text-zen-muted hover:text-forest-950 hover:bg-white rounded-full transition-all whitespace-nowrap">
+          All Programs
+        </a>
+        <a href="prenatal-yoga.html" class="px-3.5 py-1.5 text-[13px] font-semibold text-zen-muted hover:text-forest-950 hover:bg-white rounded-full transition-all whitespace-nowrap flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-[15px] text-sandalwood-600">pregnant_woman</span>
+          <span>Prenatal Yoga</span>
+        </a>
+        <a href="senior-yoga.html" class="px-3.5 py-1.5 text-[13px] font-semibold text-zen-muted hover:text-forest-950 hover:bg-white rounded-full transition-all whitespace-nowrap flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-[15px] text-forest-700">elderly</span>
+          <span>Senior Yoga</span>
+        </a>
+        <a href="certifications.html" class="px-3.5 py-1.5 text-[13px] font-bold text-forest-950 bg-white rounded-full transition-all whitespace-nowrap shadow-xs flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-[15px] text-emerald-600">workspace_premium</span>
+          <span>Certifications</span>
+        </a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-2.5 flex-shrink-0">
+        <button onclick="downloadProspectusPDF()" class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-bold text-forest-800 bg-forest-50 hover:bg-forest-100 border border-forest-200 transition-all whitespace-nowrap">
+          <span class="material-symbols-outlined text-[16px] text-forest-600">download</span>
+          <span>Prospectus (PDF)</span>
+        </button>
+
+        <button onclick="openApplyModal('RYT-200 Foundational Teacher Training')" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold text-white bg-forest-900 hover:bg-forest-800 transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5 whitespace-nowrap group">
+          <span>Apply For Cohort</span>
+          <span class="material-symbols-outlined text-[16px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button onclick="toggleMobileNav()" class="lg:hidden p-2 rounded-xl text-zen-dark hover:bg-parchment-200/60 transition-colors ml-1" aria-label="Toggle Navigation">
+          <span class="material-symbols-outlined text-2xl">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileNav" class="hidden lg:hidden border-t border-zen-border bg-white px-4 py-4 space-y-2">
+      <a href="index.html" class="block px-3 py-2 text-sm font-semibold text-zen-dark hover:bg-forest-50 rounded-lg flex items-center gap-2">
+        <span class="material-symbols-outlined text-[18px]">home</span>
+        <span>Back to Main Studio</span>
+      </a>
+      <a href="index.html#offerings" class="block px-3 py-2 text-sm font-semibold text-zen-dark hover:bg-forest-50 rounded-lg">Programs & Sadhanas</a>
+      <a href="prenatal-yoga.html" class="block px-3 py-2 text-sm font-semibold text-zen-dark hover:bg-forest-50 rounded-lg flex items-center gap-2">
+        <span class="material-symbols-outlined text-[18px] text-sandalwood-600">pregnant_woman</span>
+        <span>Prenatal Yoga (Pregnancy & Postnatal)</span>
+      </a>
+      <a href="senior-yoga.html" class="block px-3 py-2 text-sm font-semibold text-zen-dark hover:bg-forest-50 rounded-lg flex items-center gap-2">
+        <span class="material-symbols-outlined text-[18px] text-forest-700">elderly</span>
+        <span>Senior Yoga (Active Aging & Joints)</span>
+      </a>
+      <a href="certifications.html" class="block px-3 py-2 text-sm font-bold text-forest-900 bg-forest-50 rounded-lg flex items-center gap-2">
+        <span class="material-symbols-outlined text-[18px] text-emerald-600">workspace_premium</span>
+        <span>Teacher Certifications (200H / 500H)</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       HERO SECTION: TEACHER CERTIFICATIONS
+       ========================================================================= -->
+  <section class="relative pt-12 pb-20 bg-gradient-to-b from-forest-50/70 via-white to-parchment-50 overflow-hidden border-b border-zen-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Breadcrumb Navigation -->
+      <div class="flex items-center gap-2 text-xs text-zen-muted mb-8">
+        <a href="index.html" class="hover:text-forest-950 flex items-center gap-1">
+          <span class="material-symbols-outlined text-[14px]">home</span>
+          <span>Home</span>
+        </a>
+        <span>/</span>
+        <a href="index.html#offerings" class="hover:text-forest-950">Academy Programs</a>
+        <span>/</span>
+        <span class="text-forest-900 font-bold">Teacher Certifications</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Hero Text Matter -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100 border border-emerald-200 text-emerald-900 text-xs font-bold uppercase tracking-wider">
+            <span class="material-symbols-outlined text-[16px] text-emerald-700">verified</span>
+            <span>Yoga Alliance USA Accredited • RYT-200 & RYT-500 Diplomas</span>
+          </div>
+
+          <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-extrabold text-forest-950 tracking-tight leading-[1.15]">
+            Transform From Devoted Seeker Into a Lineage-Certified Master Teacher
+          </h1>
+
+          <p class="text-base sm:text-lg text-zen-muted leading-relaxed max-w-2xl">
+            A rigorous residential & hybrid curriculum synthesizing authentic classical alignment, functional neuromuscular biomechanics, subtle pranayama science, Patanjali's Yoga Sutras, and ethical voice projection.
+          </p>
+
+          <!-- Highlights Grid -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+            <div class="p-3.5 rounded-2xl bg-white border border-zen-border shadow-xs text-center">
+              <span class="block font-serif text-2xl font-bold text-forest-900">140+</span>
+              <span class="text-[11px] text-zen-muted font-medium">Countries Valid</span>
+            </div>
+            <div class="p-3.5 rounded-2xl bg-white border border-zen-border shadow-xs text-center">
+              <span class="block font-serif text-2xl font-bold text-forest-900">5 Pillars</span>
+              <span class="text-[11px] text-zen-muted font-medium">Academic Standards</span>
+            </div>
+            <div class="p-3.5 rounded-2xl bg-white border border-zen-border shadow-xs text-center">
+              <span class="block font-serif text-2xl font-bold text-forest-900">3.8K+</span>
+              <span class="text-[11px] text-zen-muted font-medium">Certified Alumni</span>
+            </div>
+            <div class="p-3.5 rounded-2xl bg-white border border-zen-border shadow-xs text-center">
+              <span class="block font-serif text-2xl font-bold text-forest-900">4.98</span>
+              <span class="text-[11px] text-zen-muted font-medium">Faculty Rating</span>
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="flex flex-wrap items-center gap-4 pt-4">
+            <button onclick="openApplyModal('RYT-200 Foundational Teacher Training')" class="px-7 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center gap-2">
+              <span class="material-symbols-outlined text-[18px]">school</span>
+              <span>Submit Cohort Application</span>
+            </button>
+            <button onclick="downloadProspectusPDF()" class="px-6 py-3.5 rounded-full bg-white hover:bg-parchment-100 text-forest-900 font-bold text-sm border border-forest-200 transition-all flex items-center gap-2 shadow-xs">
+              <span class="material-symbols-outlined text-[18px] text-forest-700">download</span>
+              <span>Download 2025 Prospectus</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Hero Visual Card -->
+        <div class="lg:col-span-5">
+          <div class="relative bg-white rounded-3xl p-4 sm:p-6 shadow-saas border border-zen-border">
+            <div class="relative aspect-[4/3] rounded-2xl overflow-hidden mb-5 bg-forest-900">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuARnrDxhu8GGqQNkhMH4BLcErH25lnEhAZ8ftPywv8fCMkPaQZKyljkMMydyp6Zb3nlvagp1-n5l8NdtqrGL81m0tfII8jKx19BLdJrNYf-QTXXYPP0dat8REAdyq8tVy0SKCi5eryszFUoEikx72rfXi0FxMVfCMA1U0-8JC9QVSav4xrpzpvGRySjZqjF6GurO-j2YoDZpfugLf1zipiTZCWj4OZY9_nJSt56mSfqYGC7T-5OO0ikMQ" 
+                   alt="Yoga Teacher Certification in practice" 
+                   class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-forest-950/80 via-transparent to-transparent flex items-end p-5">
+                <div class="text-white">
+                  <p class="text-xs uppercase tracking-widest text-emerald-300 font-bold">Admissions Live</p>
+                  <p class="font-serif text-lg font-bold">200-Hour Himalayan Immersion & Hybrid</p>
+                  <p class="text-xs text-parchment-200">Accredited by Yoga Alliance USA & YAI International</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-forest-50/80 border border-forest-200/80 space-y-2">
+              <div class="flex items-center justify-between text-xs font-semibold text-forest-950">
+                <span>Next Intake Deadline:</span>
+                <span class="text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded-md font-bold">15 Seats Remaining</span>
+              </div>
+              <p class="text-xs text-zen-muted">Includes lifetime access to the Aaranyak SaaS Teaching Portal, lesson plans, and client billing CRM.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       THE 5 ACADEMIC PILLARS OF CURRICULUM
+       ========================================================================= -->
+  <section class="py-16 bg-white border-b border-zen-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="px-3.5 py-1.5 rounded-full bg-forest-50 border border-forest-200 text-forest-800 text-xs font-bold uppercase tracking-wider">
+          Rigorous Pedagogy • Zero Shortcuts
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-forest-950 mt-3 mb-4">
+          The Five Academic Pillars of RYT-200 & RYT-500
+        </h2>
+        <p class="text-sm sm:text-base text-zen-muted leading-relaxed">
+          Our certification is not an attendance trophy. Every graduate must pass rigorous written examinations, posture adjustments practicums, and live student sequencing audits.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Pillar 1 -->
+        <div class="p-7 rounded-3xl bg-parchment-50 border border-zen-border shadow-xs hover:shadow-saas transition-all">
+          <div class="w-12 h-12 rounded-2xl bg-forest-100 text-forest-800 flex items-center justify-center mb-5 font-serif font-bold text-lg">
+            01
+          </div>
+          <h3 class="font-serif text-xl font-bold text-forest-950 mb-3">Classical Asana Mechanics & Safety</h3>
+          <p class="text-xs sm:text-sm text-zen-muted leading-relaxed mb-4">
+            Mastery of 108 foundational to advanced postures: Sanskrit nomenclature, skeletal bone-on-bone alignment vs muscular holding, and prop engineering (straps, wooden blocks, bolsters).
+          </p>
+          <ul class="text-xs text-zen-dark space-y-1.5 font-medium border-t border-zen-border pt-3">
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Standing, balance, forward bends, twists & inversions</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Safe manual adjustment & hands-on cues</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="p-7 rounded-3xl bg-parchment-50 border border-zen-border shadow-xs hover:shadow-saas transition-all">
+          <div class="w-12 h-12 rounded-2xl bg-forest-100 text-forest-800 flex items-center justify-center mb-5 font-serif font-bold text-lg">
+            02
+          </div>
+          <h3 class="font-serif text-xl font-bold text-forest-950 mb-3">Functional Anatomy & Biomechanics</h3>
+          <p class="text-xs sm:text-sm text-zen-muted leading-relaxed mb-4">
+            Led by orthopedic and sports physiotherapists. Skeletal variations, fascial planes (Thomas Myers' Anatomy Trains), joint capsules, spinal disc health, and injury contraindications.
+          </p>
+          <ul class="text-xs text-zen-dark space-y-1.5 font-medium border-t border-zen-border pt-3">
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Sacroiliac joint stabilization & knee meniscus care</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Rotator cuff & scapulothoracic rhythm</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="p-7 rounded-3xl bg-parchment-50 border border-zen-border shadow-xs hover:shadow-saas transition-all">
+          <div class="w-12 h-12 rounded-2xl bg-forest-100 text-forest-800 flex items-center justify-center mb-5 font-serif font-bold text-lg">
+            03
+          </div>
+          <h3 class="font-serif text-xl font-bold text-forest-950 mb-3">Pranayama, Bandhas & Energetics</h3>
+          <p class="text-xs sm:text-sm text-zen-muted leading-relaxed mb-4">
+            The esoteric science of the subtle body: the 72,000 Nadis (energy meridians), 7 Chakras, and 5 Prana Vayus. Safe gradual progression into internal locks (Mula, Uddiyana, Jalandhara).
+          </p>
+          <ul class="text-xs text-zen-dark space-y-1.5 font-medium border-t border-zen-border pt-3">
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Classical Kumbhaka ratios (1:4:2)</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Autonomic nervous system regulation science</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div class="p-7 rounded-3xl bg-parchment-50 border border-zen-border shadow-xs hover:shadow-saas transition-all">
+          <div class="w-12 h-12 rounded-2xl bg-forest-100 text-forest-800 flex items-center justify-center mb-5 font-serif font-bold text-lg">
+            04
+          </div>
+          <h3 class="font-serif text-xl font-bold text-forest-950 mb-3">Yoga Sutras, Philosophy & Ethics</h3>
+          <p class="text-xs sm:text-sm text-zen-muted leading-relaxed mb-4">
+            Systematic verse-by-verse examination of Patanjali's Yoga Sutras (the 8 Limbs / Ashtanga), the Bhagavad Gita's Karma Yoga, and Hatha Yoga Pradipika. Modern ethical guidelines for teachers.
+          </p>
+          <ul class="text-xs text-zen-dark space-y-1.5 font-medium border-t border-zen-border pt-3">
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Yama & Niyama applied in 21st century living</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Sacred teacher-student boundaries & confidentiality</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 5 -->
+        <div class="p-7 rounded-3xl bg-parchment-50 border border-zen-border shadow-xs hover:shadow-saas transition-all">
+          <div class="w-12 h-12 rounded-2xl bg-forest-100 text-forest-800 flex items-center justify-center mb-5 font-serif font-bold text-lg">
+            05
+          </div>
+          <h3 class="font-serif text-xl font-bold text-forest-950 mb-3">Teaching Practicum & Voice Projection</h3>
+          <p class="text-xs sm:text-sm text-zen-muted leading-relaxed mb-4">
+            From Day 1, you step in front of the classroom. Learn vocal resonance, pacing, evocative Sanskrit chanting, building class arcs (vinyasa krama), and cultivating an authentic teaching presence.
+          </p>
+          <ul class="text-xs text-zen-dark space-y-1.5 font-medium border-t border-zen-border pt-3">
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> 30+ hours of peer teaching with faculty critique</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Practical exam with external accreditation evaluators</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 6: SaaS & Studio Business -->
+        <div class="p-7 rounded-3xl bg-forest-950 text-white shadow-xs hover:shadow-saas transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center mb-5 font-serif font-bold text-lg">
+              06
+            </div>
+            <h3 class="font-serif text-xl font-bold text-white mb-3">Studio & SaaS Business Toolkit</h3>
+            <p class="text-xs sm:text-sm text-parchment-300 leading-relaxed mb-4">
+              Building a sustainable livelihood without selling out lineage integrity. Launching your virtual studio, automated member subscriptions, liability waivers, and tax compliance.
+            </p>
+          </div>
+          <div class="border-t border-forest-800 pt-3">
+            <span class="text-xs font-bold text-emerald-400">Included free for 1 year with certification diploma</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       ADVANCED SPECIALTY DIPLOMAS
+       ========================================================================= -->
+  <section class="py-16 bg-parchment-100/60 border-b border-zen-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-emerald-700">Continuing Education & Specializations</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-forest-950 mt-1">Specialty Teacher Endorsements</h2>
+          <p class="text-sm text-zen-muted mt-2">Elevate your teaching practice with high-demand clinical and therapeutic credentials.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Specialty 1 -->
+        <div class="bg-white rounded-3xl p-6 border border-zen-border shadow-xs hover:shadow-saas transition-all flex flex-col justify-between">
+          <div>
+            <span class="px-2.5 py-1 rounded-md bg-sandalwood-100 text-sandalwood-800 text-[11px] font-bold uppercase">RPYT • 85 Hours</span>
+            <h4 class="font-serif text-lg font-bold text-forest-950 mt-3 mb-2">Registered Prenatal Specialist</h4>
+            <p class="text-xs text-zen-muted leading-relaxed mb-4">
+              Deep training in Garbha Sanskar, trimester anatomy, pelvic floor mechanics, and doula labor support techniques.
+            </p>
+          </div>
+          <button onclick="openApplyModal('RPYT 85-Hour Prenatal Specialist')" class="w-full py-2.5 rounded-xl border border-forest-200 text-xs font-bold text-forest-800 hover:bg-forest-50 transition-colors">
+            View Syllabus
+          </button>
+        </div>
+
+        <!-- Specialty 2 -->
+        <div class="bg-white rounded-3xl p-6 border border-zen-border shadow-xs hover:shadow-saas transition-all flex flex-col justify-between">
+          <div>
+            <span class="px-2.5 py-1 rounded-md bg-forest-100 text-forest-800 text-[11px] font-bold uppercase">Geriatric • 50 Hours</span>
+            <h4 class="font-serif text-lg font-bold text-forest-950 mt-3 mb-2">Senior & Chair Yoga Therapist</h4>
+            <p class="text-xs text-zen-muted leading-relaxed mb-4">
+              Osteoporosis protocols, fall prevention balance drills, joint replacement precautions, and assisted chair sequencing.
+            </p>
+          </div>
+          <button onclick="openApplyModal('Senior & Chair Yoga Specialist (50H)')" class="w-full py-2.5 rounded-xl border border-forest-200 text-xs font-bold text-forest-800 hover:bg-forest-50 transition-colors">
+            View Syllabus
+          </button>
+        </div>
+
+        <!-- Specialty 3 -->
+        <div class="bg-white rounded-3xl p-6 border border-zen-border shadow-xs hover:shadow-saas transition-all flex flex-col justify-between">
+          <div>
+            <span class="px-2.5 py-1 rounded-md bg-emerald-100 text-emerald-800 text-[11px] font-bold uppercase">Nada Yoga • 50 Hours</span>
+            <h4 class="font-serif text-lg font-bold text-forest-950 mt-3 mb-2">Sound Healing & Singing Bowls</h4>
+            <p class="text-xs text-zen-muted leading-relaxed mb-4">
+              Tibetan bronze singing bowls, planetary gongs, Vedic mantra recitation, and brainwave entrainment science.
+            </p>
+          </div>
+          <button onclick="openApplyModal('Nada Yoga & Sound Healing (50H)')" class="w-full py-2.5 rounded-xl border border-forest-200 text-xs font-bold text-forest-800 hover:bg-forest-50 transition-colors">
+            View Syllabus
+          </button>
+        </div>
+
+        <!-- Specialty 4 -->
+        <div class="bg-white rounded-3xl p-6 border border-zen-border shadow-xs hover:shadow-saas transition-all flex flex-col justify-between">
+          <div>
+            <span class="px-2.5 py-1 rounded-md bg-parchment-200 text-forest-900 text-[11px] font-bold uppercase">Yin • 60 Hours</span>
+            <h4 class="font-serif text-lg font-bold text-forest-950 mt-3 mb-2">Yin & Restorative Therapeutics</h4>
+            <p class="text-xs text-zen-muted leading-relaxed mb-4">
+              Fascial remodeling, long-hold passive postures, meridian energy flow, and prop-heavy nervous system restoration.
+            </p>
+          </div>
+          <button onclick="openApplyModal('Yin & Restorative Therapeutics (60H)')" class="w-full py-2.5 rounded-xl border border-forest-200 text-xs font-bold text-forest-800 hover:bg-forest-50 transition-colors">
+            View Syllabus
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       STUDY FORMATS: RESIDENTIAL VS HYBRID
+       ========================================================================= -->
+  <section class="py-16 bg-white border-b border-zen-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="px-3.5 py-1.5 rounded-full bg-forest-50 border border-forest-200 text-forest-800 text-xs font-bold uppercase tracking-wider">
+          Flexible Study Architecture
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-forest-950 mt-3 mb-4">
+          Choose Your Path of Transformation
+        </h2>
+        <p class="text-sm text-zen-muted">Both formats grant identical Yoga Alliance USA RYT-200 / RYT-500 international diplomas.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        
+        <!-- Format 1 -->
+        <div class="p-8 rounded-3xl bg-forest-950 text-white border border-forest-900 shadow-xl flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold uppercase">Immersion Track</span>
+              <span class="text-xs text-parchment-300">28 Days Full Time</span>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-white mb-3">Himalayan Ashram Immersion</h3>
+            <p class="text-xs sm:text-sm text-parchment-300 leading-relaxed mb-6">
+              Live in our sacred sanctuary overlooking the sacred Ganges in Rishikesh or the backwaters of Kerala. Pure sattvic Ayurvedic meals, dawn meditation, daily fire pujas, and unbroken focus.
+            </p>
+            <ul class="text-xs text-parchment-200 space-y-2.5 mb-8">
+              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-base">check</span> All organic sattvic meals and private ashram suite included</li>
+              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-base">check</span> Direct guru-disciple mentorship with Acharya Veda & Council</li>
+              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-base">check</span> Himalayan cave excursions and sacred dip ceremonies</li>
+            </ul>
+          </div>
+          <div>
+            <div class="text-2xl font-serif font-bold text-emerald-300 mb-4">$2,850 USD <span class="text-xs text-parchment-400 font-sans font-normal">(Tuition, Room & Board)</span></div>
+            <button onclick="openApplyModal('Himalayan Ashram Immersion (28 Days)')" class="w-full py-3.5 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-forest-950 font-bold text-xs uppercase tracking-wider transition-colors shadow">
+              Apply For Himalayan Cohort
+            </button>
+          </div>
+        </div>
+
+        <!-- Format 2 -->
+        <div class="p-8 rounded-3xl bg-white border border-zen-border shadow-saas flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-3 py-1 rounded-full bg-forest-100 text-forest-800 text-xs font-bold uppercase">Hybrid Track</span>
+              <span class="text-xs text-zen-muted">16 Weeks Weekend</span>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-forest-950 mb-3">Global Hybrid & Live Studio</h3>
+            <p class="text-xs sm:text-sm text-zen-muted leading-relaxed mb-6">
+              Designed for working professionals. Interactive weekend Zoom lectures with real-time posture feedback, self-paced on-demand syllabus portal, and an optional 5-day mountain completion retreat.
+            </p>
+            <ul class="text-xs text-zen-dark space-y-2.5 mb-8">
+              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-600 text-base">check</span> Weekend live interactive lectures with class recordings</li>
+              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-600 text-base">check</span> Weekly 1-on-1 mentor check-in and video posture evaluation</li>
+              <li class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-600 text-base">check</span> 12-month access to re-watch every lecture and practicum</li>
+            </ul>
+          </div>
+          <div>
+            <div class="text-2xl font-serif font-bold text-forest-950 mb-4">$1,950 USD <span class="text-xs text-zen-muted font-sans font-normal">(Flexible 4-Month Payment Plan)</span></div>
+            <button onclick="openApplyModal('Global Hybrid Weekend Track (16 Weeks)')" class="w-full py-3.5 rounded-2xl bg-forest-900 hover:bg-forest-800 text-white font-bold text-xs uppercase tracking-wider transition-colors shadow">
+              Apply For Hybrid Cohort
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       FREQUENTLY ASKED QUESTIONS
+       ========================================================================= -->
+  <section class="py-16 bg-parchment-50 border-b border-zen-border">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-12">
+        <h2 class="font-serif text-3xl font-bold text-forest-950">Teacher Certification FAQs</h2>
+        <p class="text-sm text-zen-muted mt-2">Answers to common academic, logistical, and credential questions.</p>
+      </div>
+
+      <div class="space-y-4">
+        
+        <details class="group bg-white rounded-2xl p-5 border border-zen-border shadow-xs [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+          <summary class="flex items-center justify-between text-base font-serif font-bold text-forest-950">
+            <span>Is the diploma recognized internationally by Yoga Alliance?</span>
+            <span class="material-symbols-outlined text-emerald-600 group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <p class="text-xs sm:text-sm text-zen-muted mt-3 leading-relaxed">
+            Yes, 100%. Aaranyak Yoga Academy is an accredited Registered Yoga School (RYS-200 and RYS-500) with Yoga Alliance USA and the International Yoga Federation. Upon successful graduation, you receive your official diploma and can register immediately as an RYT-200 or RYT-500 on the global registry.
+          </p>
+        </details>
+
+        <details class="group bg-white rounded-2xl p-5 border border-zen-border shadow-xs [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+          <summary class="flex items-center justify-between text-base font-serif font-bold text-forest-950">
+            <span>Do I need to be able to do advanced handstands or deep splits?</span>
+            <span class="material-symbols-outlined text-emerald-600 group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <p class="text-xs sm:text-sm text-zen-muted mt-3 leading-relaxed">
+            Not at all. Teaching yoga is about observation, biomechanical understanding, communication clarity, and compassion. Great teachers are formed through precision, empathy, and listening, not acrobatic stunts.
+          </p>
+        </details>
+
+        <details class="group bg-white rounded-2xl p-5 border border-zen-border shadow-xs [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+          <summary class="flex items-center justify-between text-base font-serif font-bold text-forest-950">
+            <span>What happens if I miss a live lecture in the Hybrid track?</span>
+            <span class="material-symbols-outlined text-emerald-600 group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <p class="text-xs sm:text-sm text-zen-muted mt-3 leading-relaxed">
+            All hybrid sessions are recorded in 4K multi-camera video and uploaded to your student portal within 2 hours. You can watch the recording and submit a brief 3-question synthesis reflection to receive full attendance credit.
+          </p>
+        </details>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="bg-forest-950 text-parchment-200 py-12 border-t border-forest-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-6 pb-8 border-b border-forest-900">
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl bg-forest-800 flex items-center justify-center text-emerald-300">
+            <span class="material-symbols-outlined text-xl">workspace_premium</span>
+          </div>
+          <span class="font-serif text-2xl font-bold text-white">Aaranyak Academy</span>
+        </a>
+        <div class="flex flex-wrap items-center gap-6 text-xs text-parchment-300">
+          <a href="index.html" class="hover:text-white transition-colors">Main Studio</a>
+          <a href="prenatal-yoga.html" class="hover:text-white transition-colors">Prenatal Yoga</a>
+          <a href="senior-yoga.html" class="hover:text-white transition-colors">Senior Yoga</a>
+          <a href="certifications.html" class="text-white font-bold">Certifications</a>
+        </div>
+      </div>
+      <div class="pt-8 text-center text-xs text-parchment-400">
+        <p>© 2026 Aaranyak Yoga Academy & Council. Accredited RYS-200 & RYS-500 with Yoga Alliance USA.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       ACADEMY APPLICATION MODAL
+       ========================================================================= -->
+  <div id="applyModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop bg-forest-950/80 backdrop-blur-md modal-hidden" onclick="handleApplyModalBackdrop(event)">
+    <div class="relative w-full max-w-lg bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-zen-border" onclick="event.stopPropagation()">
+      <button onclick="closeApplyModal()" class="absolute top-5 right-5 text-zen-muted hover:text-zen-dark p-2 rounded-xl hover:bg-parchment-100 transition-colors">
+        <span class="material-symbols-outlined text-xl">close</span>
+      </button>
+
+      <div class="mb-5">
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md">2025 Admissions Application</span>
+        <h3 id="applyProgramTitle" class="font-serif text-2xl font-bold text-forest-950 mt-2">RYT-200 Teacher Certification</h3>
+        <p class="text-xs text-zen-muted mt-1">Review process takes 48 hours. No upfront application fee.</p>
+      </div>
+
+      <form onsubmit="handleApplySubmit(event)" class="space-y-4 text-left">
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-zen-dark mb-1">Your Full Name</label>
+          <input type="text" required placeholder="e.g., Alexandra Croft" class="w-full px-4 py-2.5 rounded-xl border border-zen-border text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
+        </div>
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-zen-dark mb-1">Email Address</label>
+          <input type="email" required placeholder="alexandra@example.com" class="w-full px-4 py-2.5 rounded-xl border border-zen-border text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
+        </div>
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-zen-dark mb-1">Preferred Format</label>
+          <select class="w-full px-4 py-2.5 rounded-xl border border-zen-border text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
+            <option>Himalayan Ashram Immersion (28 Days)</option>
+            <option>Global Hybrid Weekend Virtual (16 Weeks)</option>
+            <option>Self-Paced Mentorship Track</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-zen-dark mb-1">Briefly Describe Your Yoga Journey</label>
+          <textarea rows="3" placeholder="How long have you practiced, and what calls you to teach?" class="w-full px-4 py-2 rounded-xl border border-zen-border text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"></textarea>
+        </div>
+
+        <div class="pt-2">
+          <button type="submit" class="w-full py-3 rounded-xl bg-forest-900 hover:bg-forest-800 text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all">
+            Submit Application For Review
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function toggleMobileNav() {
+      const nav = document.getElementById('mobileNav');
+      nav.classList.toggle('hidden');
+    }
+
+    function openApplyModal(title) {
+      document.getElementById('applyProgramTitle').innerText = title;
+      const modal = document.getElementById('applyModal');
+      modal.classList.remove('modal-hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeApplyModal() {
+      const modal = document.getElementById('applyModal');
+      modal.classList.add('modal-hidden');
+      document.body.style.overflow = '';
+    }
+
+    function handleApplyModalBackdrop(e) {
+      if (e.target.id === 'applyModal') {
+        closeApplyModal();
+      }
+    }
+
+    function handleApplySubmit(e) {
+      e.preventDefault();
+      closeApplyModal();
+      showToast('Application Submitted!', 'Our admissions council will review and reach out within 48 hours.', 'verified');
+    }
+
+    function downloadProspectusPDF() {
+      showToast('Prospectus Downloading...', '2025-2026 Academic Syllabus and Tuition Guide (PDF) saved.', 'download');
+    }
+
+    function showToast(title, message, icon = 'info') {
+      const container = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+      toast.className = 'flex items-center gap-3 bg-forest-950 text-white px-4 py-3 rounded-2xl shadow-xl border border-forest-800 pointer-events-auto transform translate-y-4 opacity-0 transition-all duration-300';
+      toast.innerHTML = `
+        <span class="material-symbols-outlined text-emerald-400 text-xl">${icon}</span>
+        <div>
+          <div class="font-bold text-xs">${title}</div>
+          <div class="text-[11px] text-parchment-300">${message}</div>
+        </div>
+      `;
+      container.appendChild(toast);
+      setTimeout(() => { toast.classList.remove('translate-y-4', 'opacity-0'); }, 10);
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-2');
+        setTimeout(() => toast.remove(), 300);
+      }, 4000);
+    }
+  </script>
+
+</body>
+</html>
+
